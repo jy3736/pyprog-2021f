@@ -54,6 +54,18 @@ def on_release(k):
 listener = keyboard.Listener(on_press=on_press,on_release=on_release)
 listener.start()
 
+print(f"   自走車位置   角度    左  左前    前  右前    右")
+print("-"*50)
+
+def carInfo():
+    print(f"({car.x:5.1f}, {car.y:5.1f})",end=' ')
+    print(f"{car.angle:5.1f}",end=' ')
+    print(f"{car.L_sensor:5.1f}",end=' ')
+    print(f"{car.L_T_sensor:5.1f}",end=' ')
+    print(f"{car.F_sensor:5.1f}",end=' ')
+    print(f"{car.R_T_sensor:5.1f}",end=' ')
+    print(f"{car.R_sensor:5.1f}")
+
 class D2O(object):    
     def __init__(self, my_dict): 
         for key in my_dict:
